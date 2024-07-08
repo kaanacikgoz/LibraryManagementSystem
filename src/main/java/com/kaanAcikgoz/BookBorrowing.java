@@ -19,7 +19,7 @@ public class BookBorrowing {
     @Column(name = "borrowing_date",nullable = false)
     private LocalDate borrowingDate;
 
-    @Column(name = "borrow_returnDate",nullable = false)
+    @Column(name = "borrow_returnDate")
     private LocalDate returnDate;
 
     public BookBorrowing() {

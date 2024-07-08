@@ -2,6 +2,8 @@ package com.kaanAcikgoz;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "books")
 public class Book {
@@ -19,6 +21,10 @@ public class Book {
 
     @Column(name = "book_stock")
     private int stock;
+
+    @ManyToOne
+    @JoinColumn(name = "book_author_id", referencedColumnName = "author_id")
+    private Author author;
 
     public Book() {
 
