@@ -11,7 +11,7 @@ public class Book {
     @Column(name = "book_id",columnDefinition = "serial")
     private int id;
 
-    @Column(name = "book_name",unique = true,nullable = false)
+    @Column(name = "book_name",nullable = false)
     private String name;
 
     @Column(name = "book_publicationYear",nullable = false)
