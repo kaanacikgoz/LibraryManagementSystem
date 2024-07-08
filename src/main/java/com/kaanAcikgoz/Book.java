@@ -26,6 +26,10 @@ public class Book {
     @JoinColumn(name = "book_author_id", referencedColumnName = "author_id")
     private Author author;
 
+    @ManyToOne
+    @JoinColumn(name = "book_publisher_id", referencedColumnName = "publisher_id")
+    private Publisher publisher;
+
     public Book() {
 
     }

@@ -2,6 +2,8 @@ package com.kaanAcikgoz;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "publishers")
 public class Publisher {
@@ -19,6 +21,9 @@ public class Publisher {
 
     @Column(name = "publisher_address",nullable = false)
     private String address;
+
+    @OneToMany(mappedBy = "publisher")
+    private List<Book> bookList;
 
     public Publisher() {
 
