@@ -33,6 +33,14 @@ public class Book {
     @OneToMany(mappedBy = "book")
     private List<BookBorrowing> bookBorrowingList;
 
+    @ManyToMany
+    @JoinTable(
+            name = "books2categories",
+            joinColumns = {@JoinColumn(name = "books2categories_book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "books2categories_category_id")}
+    )
+    private List<Category> categoryList;
+
     public Book() {
 
     }

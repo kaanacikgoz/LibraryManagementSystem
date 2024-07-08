@@ -2,6 +2,8 @@ package com.kaanAcikgoz;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -16,6 +18,9 @@ public class Category {
 
     @Column(name = "category_description",nullable = false)
     private String description;
+
+    @ManyToMany(mappedBy = "categoryList")
+    private List<Book> bookList;
 
     public Category() {
 
