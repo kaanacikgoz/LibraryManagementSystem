@@ -22,15 +22,15 @@ public class Book {
     @Column(name = "book_stock")
     private int stock;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_author_id", referencedColumnName = "author_id")
     private Author author;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_publisher_id", referencedColumnName = "publisher_id")
     private Publisher publisher;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
     private List<BookBorrowing> bookBorrowingList;
 
     @ManyToMany

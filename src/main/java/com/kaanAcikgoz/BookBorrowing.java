@@ -22,7 +22,7 @@ public class BookBorrowing {
     @Column(name = "borrow_returnDate")
     private LocalDate returnDate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bookBorrowing_book_id", referencedColumnName = "book_id")
     private Book book;
 

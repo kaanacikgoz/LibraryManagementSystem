@@ -19,7 +19,7 @@ public class Category {
     @Column(name = "category_description",nullable = false)
     private String description;
 
-    @ManyToMany(mappedBy = "categoryList")
+    @ManyToMany(mappedBy = "categoryList",cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<Book> bookList;
 
     public Category() {
